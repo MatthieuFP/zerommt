@@ -1,0 +1,8 @@
+numpy==1.24.2
+torch==2.1.1+cu121
+torchvision==0.16.1+cu121
+transformers==4.35.2
+open-clip-torch==2.24.0
+timm==0.9.16
+huggingface-hub==0.21.2
+accelerate==0.26.1
