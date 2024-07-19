@@ -1,5 +1,7 @@
 # ZeroMMT
 
+ZeroMMT is compatible with Python 3.9, we did not test any other python versions.
+
 [Read the paper (arXiv)](https://arxiv.org/abs/2407.13579)
 
 ### Model weights
