@@ -11,7 +11,6 @@ ZeroMMT is compatible with Python 3.9, we did not test any other python versions
 <p align="justify"> This package is intended to perform inference with the ZeroMMT model. ZeroMMT is a zero-shot multilingual multimodal machine translation system trained only on English text-image pairs. It starts from a pretrained NLLB (more info <a href="https://github.com/facebookresearch/fairseq/tree/nllb">here</a>) and adapts it using lightweight modules (<a href="https://github.com/adapter-hub/adapters">adapters</a> & visual projector) while keeping original weights frozen during training. It is trained using visually conditioned masked language modeling and KL divergence between original MT outputs and new MMT ones. ZeroMMT is available in 3 sizes: 600M, 1.3B and 3.3B. The largest model shows state-of-the-art performances on <a href="https://github.com/MatthieuFP/CoMMuTE">CoMMuTE</a>, benchmark intended to evaluate abilities of multimodal translation systems to exploit image information to disambiguate the English sentence to be translated. ZeroMMT is multilingual and available for English-to-{Arabic,Chinese,Czech,German,French,Russian}.</p>
 
 
-
 If you use this package or like our work, please cite:
 ```
 @misc{futeral2024zeroshotmultimodalmachinetranslation,
@@ -40,8 +39,9 @@ from PIL import Image
 import torch
 from zerommt import create_model
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = create_model(model_path="matthieufp/ZeroMMT-600M",
-                     enable_cfg=False)
+                     enable_cfg=False).to(device)
 model.eval()
 
 image = Image.open(
@@ -95,8 +95,9 @@ from PIL import Image
 import torch
 from zerommt import create_model
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = create_model(model_path="matthieufp/ZeroMMT-600M",
-                     enable_cfg=True)
+                     enable_cfg=True).to(device)
 model.eval()
 
 image = Image.open(
