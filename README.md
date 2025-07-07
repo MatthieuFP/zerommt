@@ -13,14 +13,25 @@ ZeroMMT is compatible with Python 3.9, we did not test any other python versions
 
 If you use this package or like our work, please cite:
 ```
-@misc{futeral2024zeroshotmultimodalmachinetranslation,
-      title={Towards Zero-Shot Multimodal Machine Translation}, 
-      author={Matthieu Futeral and Cordelia Schmid and Benoît Sagot and Rachel Bawden},
-      year={2024},
-      eprint={2407.13579},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2407.13579}, 
+@inproceedings{futeral-etal-2025-towards,
+    title = "Towards Zero-Shot Multimodal Machine Translation",
+    author = "Futeral, Matthieu  and
+      Schmid, Cordelia  and
+      Sagot, Beno{\^i}t  and
+      Bawden, Rachel",
+    editor = "Chiruzzo, Luis  and
+      Ritter, Alan  and
+      Wang, Lu",
+    booktitle = "Findings of the Association for Computational Linguistics: NAACL 2025",
+    month = apr,
+    year = "2025",
+    address = "Albuquerque, New Mexico",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.findings-naacl.45/",
+    doi = "10.18653/v1/2025.findings-naacl.45",
+    pages = "761--778",
+    ISBN = "979-8-89176-195-7",
+    abstract = "Current multimodal machine translation (MMT) systems rely on fully supervised data (i.e sentences with their translations and accompanying images), which is costly to collect and prevents the extension of MMT to language pairs with no such data. We propose a method to bypass the need for fully supervised data to train MMT systems, using multimodal English data only. Our method ( ZeroMMT) consists in adapting a strong text-only machine translation (MT) model by training it jointly on two objectives: visually conditioned masked language modelling and the Kullback-Leibler divergence between the original MT and new MMT outputs. We evaluate on standard MMT benchmarks and on CoMMuTE, a contrastive test set designed to evaluate how well models use images to disambiguate translations. ZeroMMT obtains disambiguation results close to state-of-the-art MMT models trained on fully supervised examples. To prove that ZeroMMT generalizes to languages with no fully supervised training data, we extend CoMMuTE to three new languages: Arabic, Russian and Chinese. We also show that we can control the trade-off between disambiguation capabilities and translation fidelity at inference time using classifier-free guidance and without any additional data. Our code, data and trained models are publicly accessible."
 }
 ```
 
